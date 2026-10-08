@@ -3,347 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adam Guinichi | Game Dev & Video Editor</title>
+  <meta name="description" content="Adam Guinichi — third-year Business Computing student at ISGT, interested in web development, information systems, and creative digital work.">
+  <title>Adam Guinichi | Business Computing Student</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <!--<link rel="icon" type="image/png" href="favicon.png">-->
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
   <audio id="bg-music" src="Iframe Silhouette [OYZMZn9VOs8].mp3" loop></audio>
-  <div class="music-control">
-    <button id="music-toggle"><i class="fas fa-music"></i></button>
-    <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.3">
+
+  <div class="music-control" aria-label="Music controls">
+    <button id="music-toggle" aria-label="Play background music" title="Play / pause music">
+      <i class="fas fa-music"></i>
+    </button>
+    <input type="range" id="volume-control" min="0" max="1" step="0.05" value="0.18" aria-label="Music volume">
   </div>
 
-  <div class="background-circles">
+  <div class="background-circles" aria-hidden="true">
     <div class="circle circle-1"></div>
     <div class="circle circle-2"></div>
     <div class="circle circle-3"></div>
   </div>
 
-<!--<header  this one dsnt work fr som fking reason > 
-    <div class="photo-container">
-      <img src="me2.png" alt="Adam Guinichi" class="profilde-photo">
+  <header class="site-header">
+    <div class="profile-wrap">
+      <div class="photo-container">
+        <img src="me2.png" alt="Adam Guinichi" class="profile-photo">
+      </div>
+      <div>
+        <p class="eyebrow">BUSINESS COMPUTING · ISGT</p>
+        <h1>Adam Guinichi</h1>
+        <p class="intro-line">Third-year Business Computing student interested in building useful digital products and understanding how technology supports organisations.</p>
+      </div>
     </div>
-    <h1>Adam Guinichi</h1>
-    <p>Business Computing Student • Game Developer • Video Editor</p>d
-  </header>
-  -->
-  <header>
-    <div class="photo-container">
-      <img src="me2.png" alt="Adam Guinichi" class="profile-photo">
-    </div>
-    <h1>Adam Guinichi</h1>
-    <p>Business Computing Student • Game Developer • Video Editor</p>
   </header>
 
-  <nav>
-    <button data-tab="home" class="active-btn"><i class="fas fa-home"></i> Home</button>
-    <button data-tab="about"><i class="fas fa-user"></i> About</button>
-    <button data-tab="skills"><i class="fas fa-code"></i> Skills</button>
-    <button data-tab="experience"><i class="fas fa-briefcase"></i> Experience</button>
-    <button data-tab="projects"><i class="fas fa-project-diagram"></i> Projects</button>
-    <button data-tab="contact"><i class="fas fa-envelope"></i> Contact</button>
+  <nav aria-label="Portfolio navigation">
+    <button data-tab="home" class="active-btn"><i class="fas fa-house"></i><span>Home</span></button>
+    <button data-tab="about"><i class="fas fa-user"></i><span>About</span></button>
+    <button data-tab="skills"><i class="fas fa-layer-group"></i><span>Skills</span></button>
+    <button data-tab="experience"><i class="fas fa-compass"></i><span>Journey</span></button>
+    <button data-tab="projects"><i class="fas fa-folder-open"></i><span>Projects</span></button>
+    <button data-tab="contact"><i class="fas fa-paper-plane"></i><span>Contact</span></button>
   </nav>
 
   <main>
-    <!-- home -->
     <section id="home" class="active">
       <div class="hero">
-        <h2>Creative Developer</h2>
-        <p class="typing-text">I build games, edit videos, and create digital experiences</p>
-        <div class="scroll-down">
-          <span></span>
+        <div class="hero-copy">
+          <p class="section-kicker">PORTFOLIO / 2026</p>
+          <h2>Technology, business,<br><span>and practical projects.</span></h2>
+          <p class="hero-text">I’m studying Business Computing at ISGT, with a focus on learning how software, information systems and business needs come together.</p>
+          <div class="hero-actions">
+            <button class="primary-btn tab-link" data-target="projects">View projects <i class="fas fa-arrow-right"></i></button>
+            <button class="secondary-btn tab-link" data-target="contact">Get in touch</button>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="status-card">
+            <span class="status-dot"></span>
+            <div>
+              <strong>Currently learning</strong>
+              <span>Business information systems &amp; development</span>
+            </div>
+          </div>
+          <div class="mini-grid">
+            <div><span>01</span><strong>Systems</strong></div>
+            <div><span>02</span><strong>Web</strong></div>
+            <div><span>03</span><strong>Creative</strong></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- about -->
     <section id="about">
       <div class="section-header">
-        <h2>About Me</h2>
-        <div class="underline"></div>
+        <div><p class="section-kicker">01 / ABOUT</p><h2>A little about me</h2></div>
+        <p>More interested in making things work well than making them look complicated.</p>
       </div>
-      <div class="about-content">
-        <div class="about-card">
-          <i class="fas fa-gamepad"></i>
-          <h3>Game Development</h3>
-          <p>Passionate about creating immersive horror experiences in Unity, combining gameplay mechanics with psychological tension.</p>
+      <div class="about-layout">
+        <div class="about-main card">
+          <p>I’m a third-year Business Computing student at the Institut Supérieur de Gestion de Tunis. My studies sit between business and technology, which is the part I enjoy most: understanding a problem, figuring out what a system needs to do, and turning that into something practical.</p>
+          <p>Outside coursework, I build small projects to keep learning. Web development and programming are the main direction I’m developing, while game development, video editing and graphic design are creative side skills I use when I want to experiment.</p>
         </div>
-        <div class="about-card">
-          <i class="fas fa-video"></i>
-          <h3>Video Editing</h3>
-          <p>Specializing in cinematic storytelling through editing, color grading, and motion graphics in DaVinci Resolve.</p>
-        </div>
-        <div class="about-card">
-          <i class="fas fa-graduation-cap"></i>
-          <h3>Education</h3>
-          <p>Business Computing student at ISGT (Institut Supérieur de Gestion de Tunis), blending technical skills with creative vision.</p>
+        <div class="about-list">
+          <div class="info-row"><span>Education</span><strong>Institut Supérieur de Gestion de Tunis</strong></div>
+          <div class="info-row"><span>Year</span><strong>3rd year · Business Computing</strong></div>
+          <div class="info-row"><span>Based in</span><strong>Tunis, Tunisia</strong></div>
+          <div class="info-row"><span>Interests</span><strong>Web · Information Systems · Creative Tech</strong></div>
         </div>
       </div>
     </section>
 
-    <!--    skills-->
     <section id="skills">
       <div class="section-header">
-        <h2>My Skills</h2>
-        <div class="underline"></div>
+        <div><p class="section-kicker">02 / SKILLS</p><h2>What I work with</h2></div>
+        <p>A practical mix of technical, business and creative skills.</p>
       </div>
       <div class="skills-container">
-        <div class="skill-category">
-          <h3><i class="fas fa-gamepad"></i> Game Dev</h3>
-          <div class="skill" data-level="85">
-            <span>Unity</span>
-            <div class="skill-bar"><div class="skill-level"></div></div>
-          </div>
-          <div class="skill" data-level="75">
-            <span>C# Programming</span>
-            <div class="skill-bar"><div class="skill-level"></div></div>
-          </div>
-          <div class="skill" data-level="40">
-            <span>3D Modeling</span>
-            <div class="skill-bar"><div class="skill-level"></div></div>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3><i class="fas fa-film"></i> Video Editing</h3>
-          <div class="skill" data-level="90">
-            <span>DaVinci Resolve</span>
-            <div class="skill-bar"><div class="skill-level"></div></div>
-          </div>
-          <div class="skill" data-level="50">
-            <span>Color Grading</span>
-            <div class="skill-bar"><div class="skill-level"></div></div>
-          </div>
-          <div class="skill" data-level="70">
-            <span>Motion Graphics</span>
-            <div class="skill-bar"><div class="skill-level"></div></div>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3><i class="fas fa-paint-brush"></i> Design</h3>
-          <div class="skill" data-level="85">
-            <span>Photoshop</span>
-            <div class="skill-bar"><div class="skill-level"></div></div>
-          </div>
-          <div class="skill" data-level="75">
-            <span>Illustrator</span>
-            <div class="skill-bar"><div class="skill-level"></div></div>
-          </div>
-          <div class="skill" data-level="60">
-            <span>UI/UX Design</span>
-            <div class="skill-bar"><div class="skill-level"></div></div>
-          </div>
-        </div>
+        <article class="skill-category featured-skill">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <h3>Development &amp; systems</h3>
+          <p>My main area of growth as a Business Computing student.</p>
+          <div class="tag-list"><span>HTML / CSS</span><span>JavaScript</span><span>C#</span><span>Unity</span><span>Git / GitHub</span></div>
+        </article>
+        <article class="skill-category">
+          <div class="skill-icon"><i class="fas fa-briefcase"></i></div>
+          <h3>Business &amp; digital</h3>
+          <p>Connecting technical work with the way organisations and users actually operate.</p>
+          <div class="tag-list"><span>Information Systems</span><span>Problem Solving</span><span>Project Work</span><span>Digital Concepts</span></div>
+        </article>
+        <article class="skill-category">
+          <div class="skill-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+          <h3>Creative side skills</h3>
+          <p>Tools I use for personal projects and to explore different ways of communicating ideas.</p>
+          <div class="tag-list"><span>DaVinci Resolve</span><span>Photoshop</span><span>Graphic Design</span><span>Video Editing</span></div>
+        </article>
       </div>
     </section>
 
-    <!--   exp-->
     <section id="experience">
       <div class="section-header">
-        <h2>Experience</h2>
-        <div class="underline"></div>
+        <div><p class="section-kicker">03 / JOURNEY</p><h2>What I’ve been working on</h2></div>
+        <p>A short overview of my current direction and involvement.</p>
       </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">2023 - Present</div>
-          <div class="timeline-content">
-            <h3>Independent Game Developer</h3>
-            <p>Creating Unity game prototypes and participating in game jams. Developed multiple horror game concepts including "Echoes of ISGT".</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">2022 - Present</div>
-          <div class="timeline-content">
-            <h3>Freelance Video Editor</h3>
-            <p>Produced cinematic edits and motion graphics for clients using DaVinci Resolve. Specialized in action/sports montages.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">2023 - Present</div>
-          <div class="timeline-content">
-            <h3>Graphic Designer</h3>
-            <p>Created digital artwork, logos, and social media graphics using Photoshop and Illustrator.</p>
-          </div>
-        </div>
+      <div class="journey-grid">
+        <article class="journey-card card">
+          <span class="journey-number">01</span>
+          <div><p class="muted-label">CURRENT</p><h3>Business Computing at ISGT</h3><p>Third-year studies focused on the intersection of business and technology, building a broader understanding of information systems and software.</p></div>
+        </article>
+        <article class="journey-card card">
+          <span class="journey-number">02</span>
+          <div><p class="muted-label">STUDENT INVOLVEMENT</p><h3>SecuriNets ISGT</h3><p>Part of the student community around technology and cybersecurity at ISGT, alongside my academic work.</p></div>
+        </article>
+        <article class="journey-card card">
+          <span class="journey-number">03</span>
+          <div><p class="muted-label">PERSONAL WORK</p><h3>Learning through projects</h3><p>Building small web, programming and creative projects to apply what I learn and explore areas that interest me.</p></div>
+        </article>
       </div>
     </section>
 
-    <!-- projects -->
     <section id="projects">
       <div class="section-header">
-        <h2>My Projects</h2>
-        <div class="underline"></div>
+        <div><p class="section-kicker">04 / PROJECTS</p><h2>Selected work</h2></div>
+        <p>Projects that show what I’ve been learning outside and inside university.</p>
       </div>
 
-      <!-- Game Dev Projects -->
-      <div class="project-category">
-        <div class="category-header">
-          <i class="fas fa-gamepad"></i>
-          <h3>Game Development</h3>
-        </div>
-        <div class="projects-grid">
-          <!-- ECHOES OF ISGT PROJECT -->
-          <div class="project-card">
-            <div class="project-header">
-              <h4>Echoes of ISGT</h4>
-              <span class="project-tag prototype">Prototype</span>
-            </div>
-            <p class="project-description">A Slender-like horror game set in my faculty.</p>
-            <div class="project-links">
-              <a href="https://adam-guinichi.itch.io/echoes-of-isgt" class="itch-link" target="_blank">
-                <i class="fab fa-itch-io"></i> Play on itch.io
-              </a>
-            </div>
-            <div class="project-media">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube.com/embed/rieEHzlT9H4?si=s6DLP4Vo-xV0yvhO"
-                title="YouTube video player"
-                frameborder="0"
-                allowfullscreen>
-              </iframe>
-            </div>
+      <div class="project-grid">
+        <article class="project-card featured-project">
+          <div class="project-top"><span class="project-index">01</span><span class="project-tag">Unity · Prototype</span></div>
+          <h3>Echoes of ISGT</h3>
+          <p>A horror game prototype built around a familiar university environment. A personal project exploring gameplay, atmosphere and Unity development.</p>
+          <a href="https://adam-guinichi.itch.io/echoes-of-isgt" target="_blank" rel="noopener" class="text-link">View on itch.io <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </article>
+        <article class="project-card">
+          <div class="project-top"><span class="project-index">02</span><span class="project-tag">Unity · Demo</span></div>
+          <h3>Out of Stock</h3>
+          <p>A horror FPS demo created as a school project using Unity’s Horror FPS Kit, with a focus on putting gameplay concepts into practice.</p>
+          <a href="https://zaryacreations.itch.io/out-of-stock" target="_blank" rel="noopener" class="text-link">View on itch.io <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </article>
+        <article class="project-card video-project">
+          <div class="project-top"><span class="project-index">03</span><span class="project-tag">Creative side project</span></div>
+          <h3>Video editing</h3>
+          <p>One selected edit showing the creative side of my work. Video editing is a supporting skill rather than the main focus of this portfolio.</p>
+          <div class="project-media">
+            <iframe src="https://www.youtube.com/embed/T1dTAg4RF2k" title="Adam Guinichi video editing project" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-
-          <!-- OUT OF STOCK PROJECT -->
-          <div class="project-card">
-            <div class="project-header">
-              <h4>Out of Stock</h4>
-              <span class="project-tag demo">Demo</span>
-            </div>
-            <p class="project-description">Horror FPS demo created using Unity's Horror FPS Kit for a school project.</p>
-            <div class="project-links">
-              <a href="https://zaryacreations.itch.io/out-of-stock" class="itch-link" target="_blank">
-                <i class="fab fa-itch-io"></i> Play on itch.io
-              </a>
-            </div>
-            <div class="project-media">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube.com/embed/D2NaUwZOfBo"
-                title="YouTube video player"
-                frameborder="0"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
+        </article>
       </div>
 
-      <!-- Video Projects -->
-      <div class="project-category">
-        <div class="category-header">
-          <i class="fas fa-video"></i>
-          <h3>Video Editing</h3>
-        </div>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-header">
-              <h4>School Project Video</h4>
-            </div>
-            <p class="project-description">A video I made for a project at school showcasing editing techniques.</p>
-            <div class="project-media">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube.com/embed/T1dTAg4RF2k"
-                title="YouTube video player"
-                frameborder="0"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <div class="project-header">
-              <h4>promotional video inside Gmod</h4>
-            </div>
-            <p class="project-description">Something i made when i was bored.</p>
-            <div class="project-media">
-              <iframe width="100%" height="100%"
-                src="https://www.youtube.com/embed/uH8GJRe9Qd8"
-                title="YouTube video player"
-                frameborder="0"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-category">
-        <div class="category-header">
-          <i class="fas fa-paint-brush"></i>
-          <h3>Graphic Design</h3>
-        </div>
+      <div class="creative-strip">
+        <div><p class="section-kicker">CREATIVE ARCHIVE</p><h3>Design work</h3><p>Graphic design stays here as a supporting part of the portfolio rather than the headline.</p></div>
         <div class="design-gallery">
-          <div class="gallery-item">
-            <img src="Messenger_creation_704586038323030.jpeg" alt="Varsity Jacket Design">
-            <div class="gallery-overlay">
-              <h4>Custom Varsity Jacket</h4>
-              <p>Class jacket design with custom logo and layout</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="design2.jpg" alt="Logo Design">
-            <div class="gallery-overlay">
-              <h4>Logo Concepts</h4>
-              <p>Various branding and identity designs</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="design3.jpg" alt="Digital Art">
-            <div class="gallery-overlay">
-              <h4>Digital Illustrations</h4>
-              <p>Character designs and concept art</p>
-            </div>
-          </div>
+          <div class="gallery-item"><img src="Messenger_creation_704586038323030.jpeg" alt="Varsity jacket design"><span>Varsity jacket</span></div>
+          <div class="gallery-item"><img src="design2.jpg" alt="Logo design concept"><span>Logo concepts</span></div>
+          <div class="gallery-item"><img src="design3.jpg" alt="Digital illustration"><span>Digital illustration</span></div>
         </div>
       </div>
     </section>
 
-    <!--contact hehe -->
     <section id="contact">
-      <div class="section-header">
-        <h2>Get In Touch</h2>
-        <div class="underline"></div>
-      </div>
-      <div class="contact-container">
-        <div class="contact-card">
-          <div class="contact-method">
-            <i class="fas fa-envelope"></i>
-            <h3>Email</h3>
-            <a href="mailto:adamgnichi@gmail.com">adamgnichi@gmail.com</a>
-          </div>
-          
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/adam-guinichi-218038285/" target="_blank" class="social-btn linkedin">
-              <i class="fab fa-linkedin-in"></i>
-              LinkedIn
-            </a>
-            
-            <a href="https://github.com/Adam-Guinichi" target="_blank" class="social-btn github">
-              <i class="fab fa-github"></i>
-              GitHub
-            </a>
-          </div>
+      <div class="contact-panel">
+        <div>
+          <p class="section-kicker">05 / CONTACT</p>
+          <h2>Let’s connect.</h2>
+          <p>If you want to talk about a project, university work, technology or just compare ideas, feel free to reach out.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="contact-link" href="mailto:adamgnichi@gmail.com"><i class="fas fa-envelope"></i><span><small>Email</small>adamgnichi@gmail.com</span></a>
+          <a class="contact-link" href="https://www.linkedin.com/in/adam-guinichi-218038285/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i><span><small>LinkedIn</small>adam-guinichi</span></a>
+          <a class="contact-link" href="https://github.com/Adam-Guinichi" target="_blank" rel="noopener"><i class="fab fa-github"></i><span><small>GitHub</small>Adam-Guinichi</span></a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Adam Guinichi</p>
-  </footer>
+  <footer><span>Adam Guinichi</span><span>Business Computing · ISGT</span></footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
