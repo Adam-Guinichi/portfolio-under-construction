@@ -3,100 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f0f12">
+  <meta name="color-scheme" content="dark">
   <meta name="description" content="Adam Guinichi — third-year Business Computing student at ISGT, interested in development, information systems, and creative side projects.">
   <title>Adam Guinichi | Business Computing</title>
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <audio id="bg-music" src="Iframe Silhouette [OYZMZn9VOs8].mp3" loop></audio>
 
-  <div class="music-control" aria-label="Music controls">
-    <button id="music-toggle" aria-label="Play background music" title="Play / pause music">
-      <i class="fas fa-music"></i>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="wipe" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"></div>
+
+  <div class="music-control" role="group" aria-label="Music controls">
+    <button id="music-toggle" type="button" aria-label="Play background music" title="Play / pause music">
+      <i class="fas fa-music" aria-hidden="true"></i>
     </button>
+    <span class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
     <input type="range" id="volume-control" min="0" max="1" step="0.05" value="0.18" aria-label="Music volume">
   </div>
 
   <div class="background-circles" aria-hidden="true">
+    <div class="spot"></div>
     <div class="circle circle-1"></div>
     <div class="circle circle-2"></div>
     <div class="circle circle-3"></div>
   </div>
 
   <header class="site-header">
-    <div class="photo-container">
-      <img src="me2.png" alt="Adam Guinichi" class="profile-photo">
-    </div>
-    <h1>Adam Guinichi</h1>
-    <p>Business Computing Student · ISGT</p>
-    <p class="header-note">Third year student interested in development, information systems, and building things on the side.</p>
+    <a class="brand" href="#home" data-tab="home">
+      <img src="me2.png" alt="" class="brand-photo" width="44" height="44">
+      <div class="brand-text">
+        <h1 translate="no">Adam Guinichi</h1>
+        <p>Business Computing Student · ISGT</p>
+      </div>
+    </a>
+
+    <nav aria-label="Portfolio navigation">
+      <a href="#home" data-tab="home" class="active-btn" aria-current="page"><i class="fas fa-house" aria-hidden="true"></i><span>Home</span></a>
+      <a href="#about" data-tab="about"><i class="fas fa-user" aria-hidden="true"></i><span>About</span></a>
+      <a href="#skills" data-tab="skills"><i class="fas fa-code" aria-hidden="true"></i><span>Skills</span></a>
+      <a href="#projects" data-tab="projects"><i class="fas fa-project-diagram" aria-hidden="true"></i><span>Projects</span></a>
+      <a href="#contact" data-tab="contact"><i class="fas fa-envelope" aria-hidden="true"></i><span>Contact</span></a>
+      <span class="nav-ink" aria-hidden="true"></span>
+    </nav>
   </header>
 
-  <nav aria-label="Portfolio navigation">
-    <button data-tab="home" class="active-btn"><i class="fas fa-house"></i><span>Home</span></button>
-    <button data-tab="about"><i class="fas fa-user"></i><span>About</span></button>
-    <button data-tab="skills"><i class="fas fa-code"></i><span>Skills</span></button>
-    <button data-tab="projects"><i class="fas fa-project-diagram"></i><span>Projects</span></button>
-    <button data-tab="contact"><i class="fas fa-envelope"></i><span>Contact</span></button>
-  </nav>
-
-  <main>
-    <section id="home" class="active">
+  <main id="main">
+    <section id="home" class="active" aria-label="Home">
       <div class="hero">
-        <p class="eyebrow">BUSINESS COMPUTING · 3RD YEAR</p>
-        <h2>Learning, building,<br><span>and making things work.</span></h2>
-        <p class="hero-text">I study Business Computing at ISGT and spend my free time working on development projects, games, and other things I find interesting.</p>
-        <div class="hero-actions">
-          <button class="primary-btn tab-link" data-target="projects">See my projects <i class="fas fa-arrow-right"></i></button>
-          <button class="secondary-btn tab-link" data-target="about">About me</button>
+        <p class="eyebrow rv">BUSINESS COMPUTING · 3RD YEAR</p>
+        <h2 class="hero-title rv-lines">
+          <span class="line"><span>Learning, building,</span></span>
+          <span class="line"><span class="soft flicker">and making things work.</span></span>
+        </h2>
+
+        <div class="hero-lower">
+          <div class="hero-copy">
+            <p class="hero-text rv">I study Business Computing at ISGT and spend my free time working on development projects, games, and other things I find interesting.</p>
+            <div class="hero-actions rv">
+              <a class="primary-btn tab-link mag" href="#projects" data-target="projects">See my projects <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+              <a class="secondary-btn tab-link mag" href="#about" data-target="about">About me</a>
+            </div>
+            <p class="header-note rv">Third year student interested in development, information systems, and building things on the side.</p>
+          </div>
+
+          <div class="portrait rv" data-tilt>
+            <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><path id="ringpath" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/></defs>
+              <text><textPath href="#ringpath" startOffset="0" textLength="510" lengthAdjust="spacing">Business Computing · ISGT · Tunis · Business Computing · ISGT · Tunis ·</textPath></text>
+            </svg>
+            <div class="photo-container">
+              <img src="me2.png" alt="Adam Guinichi" class="profile-photo" width="705" height="1246" fetchpriority="high">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>C#</span><span>JavaScript</span><span>HTML / CSS</span><span>Unity</span><span>Git / GitHub</span><span>DaVinci Resolve</span><span>Photoshop</span><span>Graphic Design</span><span>Video Editing</span>
+          <span>C#</span><span>JavaScript</span><span>HTML / CSS</span><span>Unity</span><span>Git / GitHub</span><span>DaVinci Resolve</span><span>Photoshop</span><span>Graphic Design</span><span>Video Editing</span>
         </div>
       </div>
     </section>
 
-    <section id="about">
+    <section id="about" aria-labelledby="about-title">
       <div class="section-header">
-        <div><p class="section-kicker">01 / ABOUT</p><h2>A little about me</h2></div>
-        <p>Business and technology are the two sides of what I study.</p>
+        <div><p class="section-kicker rv">01 / ABOUT</p><h2 id="about-title" class="rv">A little about me</h2></div>
+        <p class="rv">Business and technology are the two sides of what I study.</p>
       </div>
       <div class="about-layout">
-        <div class="about-main card">
-          <p>I’m a third-year Business Computing student at the Institut Supérieur de Gestion de Tunis. I like the mix of business and technical work that comes with the field, especially when it involves understanding a problem and figuring out how to build a useful solution.</p>
-          <p>Most of my development work is driven by learning through projects. Game development, video editing, and graphic design are side interests that I come back to when I want to experiment or work on something different.</p>
+        <div class="about-main">
+          <p class="rv">I’m a third-year Business Computing student at the Institut Supérieur de Gestion de Tunis. I like the mix of business and technical work that comes with the field, especially when it involves understanding a problem and figuring out how to build a useful solution.</p>
+          <p class="rv">Most of my development work is driven by learning through projects. Game development, video editing, and graphic design are side interests that I come back to when I want to experiment or work on something different.</p>
         </div>
         <div class="about-list">
-          <div class="info-row"><span>Education</span><strong>Institut Supérieur de Gestion de Tunis</strong></div>
-          <div class="info-row"><span>Year</span><strong>3rd year · Business Computing</strong></div>
-          <div class="info-row"><span>Based in</span><strong>Tunis, Tunisia</strong></div>
-          <div class="info-row"><span>Interests</span><strong>Development · Systems · Games</strong></div>
+          <div class="info-row rv"><span>Education</span><strong>Institut Supérieur de Gestion de Tunis</strong></div>
+          <div class="info-row rv"><span>Year</span><strong>3rd year · Business Computing</strong></div>
+          <div class="info-row rv"><span>Based in</span><strong>Tunis, Tunisia</strong></div>
+          <div class="info-row rv"><span>Interests</span><strong>Development · Systems · Games</strong></div>
         </div>
       </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" aria-labelledby="skills-title">
       <div class="section-header">
-        <div><p class="section-kicker">02 / SKILLS</p><h2>What I work with</h2></div>
-        <p>Development is the main focus, with business and creative skills alongside it.</p>
+        <div><p class="section-kicker rv">02 / SKILLS</p><h2 id="skills-title" class="rv">What I work with</h2></div>
+        <p class="rv">Development is the main focus, with business and creative skills alongside it.</p>
       </div>
       <div class="skills-container">
-        <article class="skill-category featured-skill">
-          <div class="skill-icon"><i class="fas fa-code"></i></div>
+        <article class="skill-category featured-skill rv" data-tilt>
+          <div class="skill-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
           <h3>Development</h3>
           <p>The main technical area I’m building through coursework and personal projects.</p>
           <div class="tag-list"><span>C#</span><span>JavaScript</span><span>HTML / CSS</span><span>Unity</span><span>Git / GitHub</span></div>
         </article>
-        <article class="skill-category">
-          <div class="skill-icon"><i class="fas fa-briefcase"></i></div>
+        <article class="skill-category rv" data-tilt>
+          <div class="skill-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
           <h3>Business &amp; systems</h3>
           <p>The business side of my degree and how technical solutions fit into real organisations.</p>
           <div class="tag-list"><span>Information Systems</span><span>Problem Solving</span><span>Project Work</span><span>Digital Concepts</span></div>
         </article>
-        <article class="skill-category">
-          <div class="skill-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+        <article class="skill-category rv" data-tilt>
+          <div class="skill-icon"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i></div>
           <h3>Side skills</h3>
           <p>Creative tools I use for personal work and projects outside my main development focus.</p>
           <div class="tag-list"><span>DaVinci Resolve</span><span>Photoshop</span><span>Graphic Design</span><span>Video Editing</span></div>
@@ -104,28 +143,28 @@
       </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" aria-labelledby="projects-title">
       <div class="section-header">
-        <div><p class="section-kicker">03 / PROJECTS</p><h2>Things I’ve worked on</h2></div>
-        <p>A few projects from development and my creative side interests.</p>
+        <div><p class="section-kicker rv">03 / PROJECTS</p><h2 id="projects-title" class="rv">Things I’ve worked on</h2></div>
+        <p class="rv">A few projects from development and my creative side interests.</p>
       </div>
 
       <div class="project-grid game-projects">
-        <article class="project-card game-card">
+        <article class="project-card game-card rv glow">
           <div class="project-top"><span class="project-index">01</span><span class="project-tag">Unity · Prototype</span></div>
           <h3>Echoes of ISGT</h3>
           <p>A horror game prototype set around ISGT, built as a way to experiment with Unity, gameplay and atmosphere.</p>
-          <a href="https://adam-guinichi.itch.io/echoes-of-isgt" target="_blank" rel="noopener" class="text-link">View on itch.io <i class="fas fa-arrow-up-right-from-square"></i></a>
+          <a href="https://adam-guinichi.itch.io/echoes-of-isgt" target="_blank" rel="noopener" class="text-link">View on itch.io <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
           <div class="project-media">
             <iframe src="https://www.youtube.com/embed/rieEHzlT9H4?si=s6DLP4Vo-xV0yvhO" title="Echoes of ISGT gameplay showcase" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </article>
 
-        <article class="project-card game-card">
+        <article class="project-card game-card rv glow">
           <div class="project-top"><span class="project-index">02</span><span class="project-tag">Unity · Demo</span></div>
           <h3>Out of Stock</h3>
           <p>A horror FPS demo made for a school project using Unity’s Horror FPS Kit, focused on putting gameplay ideas into practice.</p>
-          <a href="https://zaryacreations.itch.io/out-of-stock" target="_blank" rel="noopener" class="text-link">View on itch.io <i class="fas fa-arrow-up-right-from-square"></i></a>
+          <a href="https://zaryacreations.itch.io/out-of-stock" target="_blank" rel="noopener" class="text-link">View on itch.io <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
           <div class="project-media">
             <iframe src="https://www.youtube.com/embed/D2NaUwZOfBo" title="Out of Stock gameplay showcase" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
@@ -133,7 +172,7 @@
       </div>
 
       <div class="creative-project">
-        <div class="project-card video-project">
+        <div class="project-card video-project rv glow">
           <div class="project-top"><span class="project-index">03</span><span class="project-tag">Video editing</span></div>
           <h3>Video editing</h3>
           <p>One selected edit from the creative side of my work.</p>
@@ -144,32 +183,32 @@
       </div>
 
       <div class="creative-strip">
-        <div><p class="section-kicker">CREATIVE ARCHIVE</p><h3>Design work</h3><p>Some graphic work from outside my main development focus.</p></div>
+        <div class="creative-intro rv"><p class="section-kicker">CREATIVE ARCHIVE</p><h3>Design work</h3><p>Some graphic work from outside my main development focus.</p></div>
         <div class="design-gallery">
-          <div class="gallery-item"><img src="Messenger_creation_704586038323030.jpeg" alt="Varsity jacket design"><span>Varsity jacket</span></div>
-          <div class="gallery-item"><img src="design2.jpg" alt="Logo design concept"><span>Logo concepts</span></div>
-          <div class="gallery-item"><img src="design3.jpg" alt="Digital illustration"><span>Digital illustration</span></div>
+          <div class="gallery-item rv" tabindex="0" role="button" aria-label="Open image: Varsity jacket" data-tilt><img src="Messenger_creation_704586038323030.jpeg" alt="Varsity jacket design" width="3839" height="2048" loading="lazy"><span>Varsity jacket</span></div>
+          <div class="gallery-item rv" tabindex="0" role="button" aria-label="Open image: Logo concepts" data-tilt><img src="design2.jpg" alt="Logo design concept" width="800" height="800" loading="lazy"><span>Logo concepts</span></div>
+          <div class="gallery-item rv" tabindex="0" role="button" aria-label="Open image: Digital illustration" data-tilt><img src="design3.jpg" alt="Digital illustration" width="800" height="800" loading="lazy"><span>Digital illustration</span></div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" aria-labelledby="contact-title">
       <div class="contact-panel">
         <div>
-          <p class="section-kicker">04 / CONTACT</p>
-          <h2>Get in touch.</h2>
-          <p>If you want to talk about a project, university work, development, or anything tech-related, feel free to reach out.</p>
+          <p class="section-kicker rv">04 / CONTACT</p>
+          <h2 id="contact-title" class="rv-lines"><span class="line"><span>Get in touch.</span></span></h2>
+          <p class="rv">If you want to talk about a project, university work, development, or anything tech-related, feel free to reach out.</p>
         </div>
         <div class="contact-actions">
-          <a class="contact-link" href="mailto:adamgnichi@gmail.com"><i class="fas fa-envelope"></i><span><small>Email</small>adamgnichi@gmail.com</span></a>
-          <a class="contact-link" href="https://www.linkedin.com/in/adam-guinichi-218038285/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i><span><small>LinkedIn</small>adam-guinichi</span></a>
-          <a class="contact-link" href="https://github.com/Adam-Guinichi" target="_blank" rel="noopener"><i class="fab fa-github"></i><span><small>GitHub</small>Adam-Guinichi</span></a>
+          <a class="contact-link rv" href="mailto:adamgnichi@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i><span><small>Email</small>adamgnichi@gmail.com</span><i class="fas fa-arrow-right go" aria-hidden="true"></i></a>
+          <a class="contact-link rv" href="https://www.linkedin.com/in/adam-guinichi-218038285/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span><small>LinkedIn</small>adam-guinichi</span><i class="fas fa-arrow-right go" aria-hidden="true"></i></a>
+          <a class="contact-link rv" href="https://github.com/Adam-Guinichi" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i><span><small>GitHub</small>Adam-Guinichi</span><i class="fas fa-arrow-right go" aria-hidden="true"></i></a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer><span>Adam Guinichi</span><span>Business Computing · ISGT</span></footer>
+  <footer><span translate="no">Adam Guinichi</span><span>Business Computing · ISGT</span></footer>
 
   <script src="script.js"></script>
 </body>
