@@ -139,27 +139,20 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Fine-pointer effects: flashlight, cursor ring, tilt, magnetic buttons ---------- */
   if (finePointer.matches && !reduceMotion.matches) {
     const spot = document.querySelector('.spot');
-    const cursor = document.querySelector('.cursor');
-    let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
-    let sx = tx, sy = ty, cx = tx, cy = ty;
+        let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
+    let sx = tx, sy = ty;
     let moved = false;
 
     window.addEventListener('pointermove', (e) => {
       tx = e.clientX; ty = e.clientY;
-      if (!moved) { moved = true; spot.classList.add('on'); cursor.classList.add('on'); }
+      if (!moved) { moved = true; spot.classList.add('on'); }
     }, { passive: true });
-    document.addEventListener('pointerleave', () => { spot.classList.remove('on'); cursor.classList.remove('on'); moved = false; });
-    window.addEventListener('pointerdown', () => cursor.classList.add('down'));
-    window.addEventListener('pointerup', () => cursor.classList.remove('down'));
+    document.addEventListener('pointerleave', () => { spot.classList.remove('on'); moved = false; });
 
-    const hotSelector = 'a, button, input, [role="button"], .tag-list span, .info-row, iframe';
-    document.addEventListener('pointerover', (e) => cursor.classList.toggle('hot', !!e.target.closest(hotSelector)));
 
     const loop = () => {
       sx += (tx - sx) * 0.08; sy += (ty - sy) * 0.08;
-      cx += (tx - cx) * 0.22; cy += (ty - cy) * 0.22;
       spot.style.transform = `translate3d(${sx}px, ${sy}px, 0)`;
-      cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
       const nx = (tx / window.innerWidth - 0.5), ny = (ty / window.innerHeight - 0.5);
       circles.forEach((c, i) => { c.style.translate = `${-nx * (24 + i * 18)}px ${-ny * (24 + i * 18)}px`; });
       requestAnimationFrame(loop);
@@ -187,15 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Magnetic buttons
-    document.querySelectorAll('.mag').forEach(el => {
-      el.addEventListener('pointermove', (e) => {
-        const r = el.getBoundingClientRect();
-        el.style.setProperty('--tx', ((e.clientX - r.left - r.width / 2) * 0.22).toFixed(1) + 'px');
-        el.style.setProperty('--ty', ((e.clientY - r.top - r.height / 2) * 0.3).toFixed(1) + 'px');
-      });
-      el.addEventListener('pointerleave', () => { el.style.setProperty('--tx', '0px'); el.style.setProperty('--ty', '0px'); });
-    });
   }
 
   /* ---------- Design archive: lightbox + graceful handling of missing files ---------- */
