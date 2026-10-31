@@ -81,8 +81,8 @@ section { display: none; padding: 45px 0; min-height: 600px; }
 section.active { display: block; }
 
 /* ---------- Reveal system (content is visible if JS is off) ---------- */
-.js .rv { opacity: 0; translate: 0 34px; }
-.js .rv.in { opacity: 1; translate: 0 0; transition: opacity .9s var(--ease) var(--d, 0ms), translate .9s var(--ease) var(--d, 0ms), transform .3s var(--ease-io), border-color .3s, background-color .3s; }
+.js .rv { opacity: 0; translate: 0 14px; }
+.js .rv.in { opacity: 1; translate: 0 0; transition: opacity .7s var(--ease) var(--d, 0ms), translate .7s var(--ease) var(--d, 0ms), transform .3s var(--ease-io), border-color .3s, background-color .3s; }
 .line { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
 .line > span { display: inline-block; }
 .js .rv-lines .line > span { transform: translateY(112%); }
@@ -96,7 +96,7 @@ section.active { display: block; }
 .eyebrow, .section-kicker { color: var(--primary); font-size: .78rem; letter-spacing: .15em; font-weight: 600; display: inline-flex; align-items: center; gap: 12px; }
 .eyebrow::before, .section-kicker::before { content: ''; width: 34px; height: 2px; background: var(--primary); transform-origin: left; animation: grow 1s var(--ease) both .3s; }
 @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-.hero h2 { font-weight: 800; font-size: clamp(2.4rem, 6.6vw, 5.7rem); line-height: .98; letter-spacing: -.045em; margin: 20px 0 0; text-wrap: initial; }
+.hero h2 { font-weight: 800; font-size: clamp(2.4rem, 6vw, 5.2rem); line-height: .98; letter-spacing: -.045em; margin: 20px 0 0; text-wrap: initial; }
 .hero h2 .soft { color: #9b9ba6; }
 .flicker { animation: flicker 7s linear infinite 3s; }
 @keyframes flicker { 0%, 88%, 100% { opacity: 1; } 89% { opacity: .35; } 90% { opacity: 1; } 91.5% { opacity: .2; } 93% { opacity: 1; } 94% { opacity: .6; } 95% { opacity: 1; } }
@@ -122,8 +122,6 @@ section.active { display: block; }
 .photo-container { position: absolute; inset: 9%; border-radius: 50%; overflow: hidden; border: 4px solid var(--primary); background: var(--card-bg); }
 .profile-photo { position: absolute; left: 0; top: 0; width: 100%; height: auto; min-height: 100%; object-fit: cover; object-position: center 30%; transition: transform .8s var(--ease); }
 .portrait:hover .profile-photo { transform: scale(1.08) translateY(-2%); }
-.portrait::after { content: ''; position: absolute; inset: 9%; border-radius: 50%; border: 2px solid var(--primary); animation: ping 3.2s var(--ease) infinite; pointer-events: none; }
-@keyframes ping { 0% { transform: scale(1); opacity: .7; } 70%, 100% { transform: scale(1.32); opacity: 0; } }
 
 .marquee { overflow: hidden; margin: 10px calc(50% - 50vw) 0; border-block: 1px solid var(--line); padding: 18px 0; }
 .marquee-track { display: flex; width: max-content; gap: 44px; padding-left: 44px; animation: marquee 38s linear infinite; }
@@ -152,19 +150,18 @@ section.active { display: block; }
 
 /* ---------- Skills ---------- */
 .skills-container { display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: auto auto; gap: 18px; }
-.skill-category { position: relative; padding: 30px; background: rgba(30,30,42,.9); border: 1px solid var(--line); border-radius: 14px; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .25s ease-out, border-color .3s, background-color .3s; }
+.skill-category { position: relative; padding: 30px; background: rgba(30,30,42,.9); border: 1px solid var(--line); border-radius: 14px; transition: border-color .3s, background-color .3s; }
 .skill-category:hover { border-color: rgba(233,69,96,.5); background: rgba(36,36,50,.95); }
 .featured-skill { grid-row: span 2; padding: clamp(30px, 4vw, 52px); display: flex; flex-direction: column; justify-content: center; }
 .skill-category.featured-skill h3 { font-size: clamp(2.2rem, 4.4vw, 3.6rem); font-weight: 800; letter-spacing: -.04em; line-height: 1; margin-bottom: 18px; }
 .skill-category.featured-skill p { font-size: 1.02rem; max-width: 420px; }
 .featured-skill .tag-list span { font-size: .84rem; padding: 9px 14px; }
 .skill-icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--primary); margin-bottom: 22px; transition: transform .6s var(--ease); }
-.skill-category:hover .skill-icon { transform: rotate(360deg) scale(1.1); }
 .skill-category h3 { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; margin-bottom: 9px; }
 .skill-category p { color: var(--gray); font-size: .9rem; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .tag-list span { border: 1px solid var(--line-2); color: #c7c7cf; padding: 7px 12px; border-radius: 999px; font-size: .74rem; transition: background-color .25s, color .25s, border-color .25s, transform .35s var(--ease); cursor: default; }
-.tag-list span:hover { background: var(--primary); border-color: var(--primary); color: #fff; transform: translateY(-3px) rotate(-2deg); }
+.tag-list span:hover { background: var(--primary); border-color: var(--primary); color: #fff;  }
 
 /* ---------- Projects ---------- */
 .project-card { position: relative; padding: 28px; display: flex; flex-direction: column; min-width: 0; background: rgba(30,30,42,.92); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
@@ -198,7 +195,7 @@ section.active { display: block; }
 .creative-strip h3 { margin: 12px 0 6px; font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 800; letter-spacing: -.04em; line-height: 1; }
 .creative-strip p:not(.section-kicker) { color: var(--gray); font-size: .9rem; }
 .design-gallery { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 16px; }
-.gallery-item { position: relative; height: clamp(280px, 34vw, 480px); overflow: hidden; border-radius: 14px; border: 1px solid var(--line); background: var(--card-bg); cursor: pointer; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .25s ease-out, border-color .3s; }
+.gallery-item { position: relative; height: clamp(280px, 34vw, 480px); overflow: hidden; border-radius: 14px; border: 1px solid var(--line); background: var(--card-bg); cursor: pointer; transition: border-color .3s; }
 .gallery-item:hover { border-color: var(--primary); }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .9s var(--ease), filter .5s; filter: saturate(.85); }
 .gallery-item:hover img { transform: scale(1.08); filter: saturate(1.1); }
