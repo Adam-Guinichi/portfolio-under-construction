@@ -39,7 +39,7 @@
   </div>
 
   <header class="site-header">
-    <a class="brand" href="#home" data-tab="home" translate="no"><h1>Adam Guinichi</h1></a>
+    <h1 class="sr-only" translate="no">Adam Guinichi</h1>
 
     <nav aria-label="Portfolio navigation">
       <a href="#home" data-tab="home" class="active-btn" aria-current="page"><i class="fas fa-house" aria-hidden="true"></i><span>Home</span></a>
@@ -54,7 +54,7 @@
   <main id="main">
     <section id="home" class="active" aria-label="Home">
       <div class="hero">
-        <p class="eyebrow rv">BUSINESS COMPUTING · 3RD YEAR</p>
+        <p class="eyebrow rv" translate="no">ADAM GUINICHI · BUSINESS COMPUTING · 3RD YEAR</p>
         <h2 class="hero-title rv-lines">
           <span class="line"><span>Learning, building,</span></span>
           <span class="line"><span class="soft flicker">and making things work.</span></span>
@@ -62,7 +62,7 @@
 
         <div class="hero-lower">
           <div class="hero-copy">
-            <p class="hero-text rv">I study Business Information Systems at ISGT and spend my free time on development projects, games and video editing. I’m looking for an end-of-studies internship (PFE).</p>
+            <p class="hero-text rv">I study Business Information Systems at ISGT and spend my free time on development projects, games and video editing.</p>
             <div class="hero-actions rv">
               <a class="primary-btn tab-link" href="#projects" data-target="projects">See my projects <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
               <a class="secondary-btn tab-link" href="#about" data-target="about">About me</a>
@@ -95,10 +95,10 @@
         </div>
         <div class="about-list">
           <div class="info-row rv"><span>Education</span><strong>Institut Supérieur de Gestion de Tunis</strong></div>
-          <div class="info-row rv"><span>Year</span><strong>3rd year · Business Computing (BIS)</strong></div>
+          <div class="info-row rv"><span>Degree</span><strong>Business Computing (BIS) · 2024–Present</strong></div>
+          <div class="info-row rv"><span>Year</span><strong>3rd year</strong></div>
           <div class="info-row rv"><span>Based in</span><strong>Tunis, Tunisia</strong></div>
-          <div class="info-row rv"><span>Languages</span><strong>English (professional) · French (intermediate)</strong></div>
-          <div class="info-row rv"><span>Looking for</span><strong>End-of-studies internship (PFE)</strong></div>
+          <div class="info-row rv"><span>Languages</span><strong>English — professional · French — intermediate</strong></div>
           <div class="info-row rv"><span>Interests</span><strong>Development · Systems · Games</strong></div>
         </div>
       </div>
@@ -114,19 +114,25 @@
           <div class="skill-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
           <h3>Development</h3>
           <p>The main technical area I’m building through coursework and personal projects.</p>
-          <div class="tag-list"><span>C</span><span>Java</span><span>Python</span><span>C#</span><span>VB</span><span>JavaScript</span><span>HTML / CSS</span><span>PHP</span><span>React</span><span>Django</span><span>SQL</span><span>Android Studio</span><span>Kotlin</span><span>Unity</span><span>Git / GitHub</span></div>
+          <div class="tag-groups">
+            <div class="tag-group"><span class="tg-name">Programming</span><div class="tag-list"><span>C</span><span>Java</span><span>Python</span><span>C#</span><span>VB</span></div></div>
+            <div class="tag-group"><span class="tg-name">Web</span><div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>React</span><span>Django</span></div></div>
+            <div class="tag-group"><span class="tg-name">Data</span><div class="tag-list"><span>SQL</span><span>Algorithms</span></div></div>
+            <div class="tag-group"><span class="tg-name">Mobile &amp; games</span><div class="tag-list"><span>Android Studio</span><span>Android SDK</span><span>Kotlin</span><span>XML</span><span>Unity</span></div></div>
+            <div class="tag-group"><span class="tg-name">Tools</span><div class="tag-list"><span>Debugging</span><span>Git / GitHub</span></div></div>
+          </div>
         </article>
         <article class="skill-category rv">
           <div class="skill-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
           <h3>Business &amp; systems</h3>
           <p>The business-information side of my degree: databases, networks and how technical solutions fit into real organisations.</p>
-          <div class="tag-list"><span>Information Systems</span><span>Algorithms</span><span>Problem Solving</span><span>Networking</span><span>Windows Support</span><span>Cisco Packet Tracer</span></div>
+          <div class="tag-list"><span>Information Systems</span><span>Problem Solving</span><span>Networking</span><span>Windows Support</span><span>Cisco Packet Tracer</span><span>IoT</span></div>
         </article>
         <article class="skill-category rv">
           <div class="skill-icon"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i></div>
           <h3>Side skills</h3>
           <p>Creative tools I use for video, motion and design work outside my main development focus.</p>
-          <div class="tag-list"><span>DaVinci Resolve</span><span>Fusion</span><span>Photoshop</span><span>Illustrator</span><span>Affinity</span><span>Color Grading</span><span>Motion Graphics</span><span>Graphic Design</span></div>
+          <div class="tag-list"><span>DaVinci Resolve</span><span>Fusion</span><span>Affinity</span><span>Adobe</span><span>Photoshop</span><span>Illustrator</span><span>Color Grading</span><span>Motion Graphics</span><span>Graphic Design</span></div>
         </article>
       </div>
     </section>
@@ -138,8 +144,8 @@
       </div>
 
 
-      <div class="software-list">
-        <h3 class="sw-title rv">Software &amp; systems</h3>
+      <div class="work-group">
+        <div class="group-head rv"><h3>Software Development &amp; IS</h3><p>Developed applications to organize data and simplify tasks. Examples include a travel-management app (routes, clients, bookings and seat availability) and algorithmic projects using data structures and graphs.</p></div>
         <article class="sw-row rv">
           <h4>Veterinary clinic manager</h4>
           <p>A desktop app for a veterinary clinic with separate dashboards for admin, secretary and vet. It covers appointments, medical records, vaccinations, medications, owners and invoices on a SQL database.</p>
@@ -151,22 +157,28 @@
           <div class="sw-side"><div class="tag-list"><span>Python</span><span>PySide6</span><span>DaVinci Resolve API</span></div><a href="https://github.com/Adam-Guinichi/DaVinci-Project-Organizer" target="_blank" rel="noopener" class="text-link">View on GitHub <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
         </article>
         <article class="sw-row rv">
-          <h4>Agricultural jobs platform</h4>
-          <p>A PHP/MySQL platform connecting agricultural employers and workers, with role-based job postings and applications. The interface is built with HTML, CSS and JavaScript.</p>
-          <div class="sw-side"><div class="tag-list"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div></div>
-        </article>
-        <article class="sw-row rv">
           <h4>Travel management app</h4>
-          <p>An application to organize routes, clients, bookings and seat availability, alongside algorithmic projects using data structures and graphs.</p>
-          <div class="sw-side"><div class="tag-list"><span>Application development</span><span>Algorithms</span></div></div>
+          <p>Routes, clients, bookings and seat availability in one application.</p>
+          <div class="sw-side"><div class="tag-list"><span>Application development</span><span>Algorithms</span><span>Graphs</span></div></div>
+        </article>
+      </div>
+
+      <div class="work-group">
+        <div class="group-head rv"><h3>Web &amp; Networking</h3><p>Built a PHP/MySQL platform connecting agricultural employers and workers, with role-based job postings and applications. Developed the interface with HTML/CSS/JavaScript; also modeled a connected campus with IoT concepts in Cisco Packet Tracer.</p></div>
+        <article class="sw-row rv">
+          <h4>Agricultural jobs platform</h4>
+          <p>Role-based job postings and applications that connect employers and workers.</p>
+          <div class="sw-side"><div class="tag-list"><span>PHP</span><span>MySQL</span><span>HTML / CSS / JavaScript</span></div></div>
         </article>
         <article class="sw-row rv">
           <h4>Connected campus</h4>
-          <p>A campus network modeled with IoT concepts in Cisco Packet Tracer.</p>
+          <p>A campus network modeled with IoT concepts.</p>
           <div class="sw-side"><div class="tag-list"><span>Networking</span><span>IoT</span><span>Cisco Packet Tracer</span></div></div>
         </article>
       </div>
 
+      <div class="work-group">
+        <div class="group-head rv"><h3>Independent Creative Projects</h3><p>Developed Unity prototypes as personal side projects, exploring gameplay mechanics and interactive environments. Also created video edits, color grading, motion graphics, and graphic design concepts with DaVinci Resolve, Fusion, and Adobe tools.</p></div>
       <div class="project-grid game-projects">
         <article class="project-card game-card rv glow">
           <div class="project-top"><span class="project-index">01</span><span class="project-tag">Unity · Prototype</span></div>
@@ -208,6 +220,7 @@
           <div class="gallery-item rv" tabindex="0" role="button" aria-label="Open image: Digital illustration"><img src="design3.jpg" alt="Digital illustration" width="800" height="800" loading="lazy"><span>Digital illustration</span></div>
         </div>
       </div>
+      </div>
     </section>
 
     <section id="contact" aria-labelledby="contact-title">
@@ -218,7 +231,9 @@
           <p class="rv">If you want to talk about a project, university work, development, or anything tech-related, feel free to reach out.</p>
         </div>
         <div class="contact-actions">
+          <a class="contact-link rv" href="tel:+21695366371"><i class="fas fa-phone" aria-hidden="true"></i><span><small>Phone</small>95-366-371</span><i class="fas fa-arrow-right go" aria-hidden="true"></i></a>
           <a class="contact-link rv" href="mailto:adamgnichi@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i><span><small>Email</small>adamgnichi@gmail.com</span><i class="fas fa-arrow-right go" aria-hidden="true"></i></a>
+          <a class="contact-link rv" href="https://www.google.com/maps/search/?api=1&amp;query=31+Taha+Hussein+St+Montfleury+Tunis" target="_blank" rel="noopener"><i class="fas fa-location-dot" aria-hidden="true"></i><span><small>Address</small>31 Taha Hussein St, Montfleury, Tunis</span><i class="fas fa-arrow-right go" aria-hidden="true"></i></a>
           <a class="contact-link rv" href="https://www.linkedin.com/in/adam-guinichi-218038285/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-hidden="true"></i><span><small>LinkedIn</small>adam-guinichi</span><i class="fas fa-arrow-right go" aria-hidden="true"></i></a>
           <a class="contact-link rv" href="https://adam-guinichi.itch.io/" target="_blank" rel="noopener"><i class="fab fa-itch-io" aria-hidden="true"></i><span><small>itch.io</small>adam-guinichi</span><i class="fas fa-arrow-right go" aria-hidden="true"></i></a>
           <a class="contact-link rv" href="https://github.com/Adam-Guinichi" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i><span><small>GitHub</small>Adam-Guinichi</span><i class="fas fa-arrow-right go" aria-hidden="true"></i></a>
@@ -227,7 +242,7 @@
     </section>
   </main>
 
-  <footer><span translate="no">Adam Guinichi</span><span>Business Computing · ISGT</span></footer>
+  <footer><span>Tunis, Tunisia</span><span>Business Computing · ISGT</span></footer>
 
   <script src="script.js"></script>
 </body>
