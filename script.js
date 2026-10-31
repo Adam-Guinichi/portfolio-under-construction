@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const volumeControl = document.getElementById('volume-control');
   const musicBox = document.querySelector('.music-control');
 
-  bgMusic.volume = 0.18;
-  volumeControl.value = 0.18;
+  bgMusic.volume = 0.06;
+  volumeControl.value = 0.06;
 
   const setPlaying = (playing) => {
     musicToggle.innerHTML = playing ? '<i class="fas fa-pause" aria-hidden="true"></i>' : '<i class="fas fa-music" aria-hidden="true"></i>';
